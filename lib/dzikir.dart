@@ -1,8 +1,11 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'main.dart';
 
 class DzikirScreen extends StatefulWidget {
+  const DzikirScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _DzikirScreenState createState() => _DzikirScreenState();
 }
 
