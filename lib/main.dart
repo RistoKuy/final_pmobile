@@ -320,12 +320,12 @@ class MainMenu extends StatelessWidget {
           if (label == 'Calculator') {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => CalculatorApp()),
+              MaterialPageRoute(builder: (context) => const CalculatorApp()),
             );
           } else if (label == 'Dzikir') {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => DzikirScreen()),
+              MaterialPageRoute(builder: (context) => const DzikirScreen()),
             );
           }
         },

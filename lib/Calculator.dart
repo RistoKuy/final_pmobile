@@ -2,36 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
-void main() => runApp(const CalculatorApp());
-
-class CalculatorApp extends StatelessWidget {
+class CalculatorApp extends StatefulWidget {
   const CalculatorApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        colorScheme: const ColorScheme.dark(
-          primary: Colors.white,
-          onPrimary: Colors.black,
-          surface: Colors.black,
-          onSurface: Colors.white,
-        ),
-      ),
-      home: const Calculator(),
-      debugShowCheckedModeBanner: false, // Remove "Demo" watermark
-    );
-  }
+  // ignore: library_private_types_in_public_api
+  _CalculatorAppState createState() => _CalculatorAppState();
 }
 
-class Calculator extends StatefulWidget {
-  const Calculator({super.key});
-
-  @override
-  State<Calculator> createState() => _CalculatorState();
-}
-
-class _CalculatorState extends State<Calculator> {
+class _CalculatorAppState extends State<CalculatorApp> {
   String display = '0';
 
   void _updateDisplay(String value) {
@@ -77,12 +56,6 @@ class _CalculatorState extends State<Calculator> {
       appBar: AppBar(
         title: const Text('Calculator'),
         backgroundColor: Colors.black,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
