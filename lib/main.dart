@@ -13,13 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Registrasi',
       theme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           primary: Colors.white,
           onPrimary: Colors.black,
-          background: Colors.black,
-          onBackground: Colors.white,
+          surface: Colors.black,
+          onSurface: Colors.white,
         ),
-        useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
       home: const RegistrationForm(),
@@ -31,6 +30,7 @@ class RegistrationForm extends StatefulWidget {
   const RegistrationForm({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _RegistrationFormState createState() => _RegistrationFormState();
 }
 
@@ -60,6 +60,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
       appBar: AppBar(
         title: const Text('Final Project - Pemrograman Mobile'),
         backgroundColor: Colors.black,
+        automaticallyImplyLeading: false, // Remove back button
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -68,7 +69,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
               child: const Text(
-                'Form Registrasi',
+                'Registration Form',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -173,6 +174,7 @@ class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginFormState createState() => _LoginFormState();
 }
 
@@ -192,7 +194,7 @@ class _LoginFormState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Form Login'),
+        title: const Text('Login Form'),
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
@@ -257,7 +259,7 @@ class _LoginFormState extends State<LoginForm> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Colors.black
                       ),
                       child: const Text('Cancel'),
                     ),
@@ -291,7 +293,7 @@ class MainMenu extends StatelessWidget {
       body: Center(
         child: Container(
           padding: const EdgeInsets.all(16.0),
-          constraints: BoxConstraints(maxWidth: 400),
+          constraints: const BoxConstraints(maxWidth: 400),
           child: GridView.count(
             crossAxisCount: 2,
             mainAxisSpacing: 10,

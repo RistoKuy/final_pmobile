@@ -1,22 +1,25 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 import 'main.dart';
 
-void main() => runApp(CalculatorApp());
+void main() => runApp(const CalculatorApp());
 
 class CalculatorApp extends StatelessWidget {
+  const CalculatorApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           primary: Colors.white,
           onPrimary: Colors.black,
-          background: Colors.black,
-          onBackground: Colors.white,
+          surface: Colors.black,
+          onSurface: Colors.white,
         ),
       ),
-      home: Calculator(),
+      home: const Calculator(),
       debugShowCheckedModeBanner: false, // Remove "Demo" watermark
     );
   }
@@ -82,12 +85,12 @@ class _CalculatorState extends State<Calculator> {
     return Scaffold(
       // Back Button to Main Menu
       appBar: AppBar(
-        title: Text('Calculator'),
+        title: const Text('Calculator'),
         backgroundColor: Colors.black,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenu()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const MainMenu()));
           },
         ),
       ),
@@ -96,7 +99,7 @@ class _CalculatorState extends State<Calculator> {
         children: [
           Text(
             display,
-            style: TextStyle(fontSize: 48, color: Colors.white),
+            style: const TextStyle(fontSize: 48, color: Colors.white),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -104,7 +107,7 @@ class _CalculatorState extends State<Calculator> {
               _buildButton('1', () => _tampil('1')),
               _buildButton('2', () => _tampil('2')),
               _buildButton('3', () => _tampil('3')),
-              _buildButton('+', () => _operasi('+')),
+              _buildButton('+', () => _operasi('+'), color: Colors.black, textColor: Colors.white),
             ],
           ),
           Row(
@@ -113,7 +116,7 @@ class _CalculatorState extends State<Calculator> {
               _buildButton('4', () => _tampil('4')),
               _buildButton('5', () => _tampil('5')),
               _buildButton('6', () => _tampil('6')),
-              _buildButton('-', () => _operasi('-')),
+              _buildButton('-', () => _operasi('-'), color: Colors.black, textColor: Colors.white),
             ],
           ),
           Row(
@@ -122,16 +125,16 @@ class _CalculatorState extends State<Calculator> {
               _buildButton('7', () => _tampil('7')),
               _buildButton('8', () => _tampil('8')),
               _buildButton('9', () => _tampil('9')),
-              _buildButton('*', () => _operasi('*')),
+              _buildButton('*', () => _operasi('*'), color: Colors.black, textColor: Colors.white),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildButton('0', () => _tampil('0')),
               _buildButton('C', _reset, color: Colors.red, textColor: Colors.white),
-              _buildButton('=', _jumlah),
-              _buildButton('/', () => _operasi('/')),
+              _buildButton('0', () => _tampil('0')),
+              _buildButton('=', _jumlah, color: Colors.green, textColor: Colors.white),
+              _buildButton('/', () => _operasi('/'), color: Colors.black, textColor: Colors.white),
             ],
           ),
         ],
@@ -141,7 +144,7 @@ class _CalculatorState extends State<Calculator> {
 
   Widget _buildButton(String label, VoidCallback onPressed, {Color color = Colors.blue, Color textColor = Colors.white}) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
