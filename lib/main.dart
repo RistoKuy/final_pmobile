@@ -1,3 +1,4 @@
+import 'package:final_pmobile/contact.dart';
 import 'package:flutter/material.dart';
 import 'calculator.dart';
 import 'dzikir.dart';
@@ -332,6 +333,11 @@ class MainMenu extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const GalleryScreen()),
+            );
+          } else if (label == 'Contact') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ContactListScreen()),
             );
           }
         },
