@@ -1,4 +1,5 @@
-2024/11/21-08:33:31.794 30d4c Reusing MANIFEST C:\Users\ARISTO~1\AppData\Local\Temp\flutter_tools.131a61e\flutter_tools_chrome_device.23b614f2\Default\Asset Store\assets.db/MANIFEST-000001
-2024/11/21-08:33:31.809 30d4c Recovering log #4
-2024/11/21-08:33:31.814 30d4c Reusing old log C:\Users\ARISTO~1\AppData\Local\Temp\flutter_tools.131a61e\flutter_tools_chrome_device.23b614f2\Default\Asset Store\assets.db/000004.log 
-2024/11/21-08:33:31.815 30d4c Delete type=0 #3
+2024/11/21-09:00:49.517 50d0 Reusing MANIFEST C:\Users\ARISTO~1\AppData\Local\Temp\flutter_tools.22f8ede9\flutter_tools_chrome_device.e206c59b\Default\Asset Store\assets.db/MANIFEST-000001
+2024/11/21-09:00:49.524 50d0 Recovering log #4
+2024/11/21-09:00:49.616 50d0 Level-0 table #6: started
+2024/11/21-09:00:49.643 50d0 Level-0 table #6: 379271 bytes OK
+2024/11/21-09:00:49.648 50d0 Delete type=0 #4
