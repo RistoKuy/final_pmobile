@@ -45,7 +45,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///C:/flutter/packages/flutter",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/flutter/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -57,9 +57,21 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///C:/flutter/packages/flutter_test",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/flutter/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "leak_tracker",
@@ -117,7 +129,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///C:/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/flutter/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -158,6 +170,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -170,16 +188,22 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "web",
+      "rootUri": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "final_pmobile",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-21T02:14:30.894714Z",
+  "generated": "2024-11-21T09:03:45.342120Z",
   "generator": "pub",
   "generatorVersion": "3.5.3",
-  "flutterRoot": "file:///C:/flutter",
+  "flutterRoot": "file:///C:/Users/Aristo%20Baadi/flutter/flutter",
   "flutterVersion": "3.24.3",
   "pubCache": "file:///C:/Users/Aristo%20Baadi/AppData/Local/Pub/Cache"
 }

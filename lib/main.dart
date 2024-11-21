@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'calculator.dart';
 import 'dzikir.dart';
+import 'gallery.dart';
 
 void main() {
   runApp(const MyApp());
@@ -326,6 +327,11 @@ class MainMenu extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const DzikirScreen()),
+            );
+          } else if (label == 'Gallery') {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const GalleryScreen()),
             );
           }
         },
