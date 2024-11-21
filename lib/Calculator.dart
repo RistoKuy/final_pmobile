@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 void main() => runApp(CalculatorApp());
 
@@ -6,6 +7,14 @@ class CalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        colorScheme: ColorScheme.dark(
+          primary: Colors.white,
+          onPrimary: Colors.black,
+          background: Colors.black,
+          onBackground: Colors.white,
+        ),
+      ),
       home: Calculator(),
       debugShowCheckedModeBanner: false, // Remove "Demo" watermark
     );
@@ -102,15 +111,23 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Back Button to Main Menu
       appBar: AppBar(
         title: Text('Calculator'),
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MainMenu()));
+          },
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             display,
-            style: TextStyle(fontSize: 48),
+            style: TextStyle(fontSize: 48, color: Colors.white),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

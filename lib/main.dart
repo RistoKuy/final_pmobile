@@ -12,8 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Registrasi',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: ThemeData.dark().copyWith(
+        colorScheme: ColorScheme.dark(
+          primary: Colors.white,
+          onPrimary: Colors.black,
+          background: Colors.black,
+          onBackground: Colors.white,
+        ),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
@@ -53,8 +58,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Arsip Jurnal Pancasila'),
-        backgroundColor: Colors.deepPurple,
+        title: const Text('Final Project - Pemrograman Mobile'),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -65,7 +70,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               child: const Text(
                 'Form Registrasi',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
@@ -127,12 +132,15 @@ class _RegistrationFormState extends State<RegistrationForm> {
                               );
                             }
                           },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                          ),
                           child: const Text('Submit'),
                         ),
                         ElevatedButton(
                           onPressed: _clearForm,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.black,
                           ),
                           child: const Text('Cancel'),
                         ),
@@ -144,7 +152,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
+                            backgroundColor: Colors.black,
                           ),
                           child: const Text('Skip'),
                         ),
@@ -185,6 +193,7 @@ class _LoginFormState extends State<LoginForm> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Form Login'),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -196,7 +205,7 @@ class _LoginFormState extends State<LoginForm> {
                 const Icon(
                   Icons.person,
                   size: 100,
-                  color: Colors.deepPurple,
+                  color: Colors.white,
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
@@ -271,22 +280,30 @@ class MainMenu extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Menu Utama'),
+        backgroundColor: Colors.black,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrationForm()));
           },
         ),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            _buildMenuItem(context, Icons.calculate, 'Calculator'),
-            _buildMenuItem(context, Icons.book, 'Dzikir'),
-            _buildMenuItem(context, Icons.photo, 'Gallery'),
-            _buildMenuItem(context, Icons.contact_page, 'Contact'),
-          ],
+        child: Container(
+          padding: const EdgeInsets.all(16.0),
+          constraints: BoxConstraints(maxWidth: 400),
+          child: GridView.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            shrinkWrap: true,
+            children: <Widget>[
+              _buildMenuItem(context, Icons.calculate, 'Calculator'),
+              _buildMenuItem(context, Icons.book, 'Dzikir'),
+              _buildMenuItem(context, Icons.photo, 'Gallery'),
+              _buildMenuItem(context, Icons.contact_page, 'Contact'),
+            ],
+          ),
         ),
       ),
     );
@@ -294,7 +311,7 @@ class MainMenu extends StatelessWidget {
 
   Widget _buildMenuItem(BuildContext context, IconData icon, String label) {
     return Card(
-      margin: const EdgeInsets.all(8.0),
+      color: Colors.black,
       child: InkWell(
         onTap: () {
           if (label == 'Calculator') {
@@ -305,14 +322,14 @@ class MainMenu extends StatelessWidget {
           }
         },
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(icon, size: 48.0),
+            Icon(icon, size: 48.0, color: Colors.white),
             const SizedBox(height: 8.0),
-            Text(label),
+            Text(label, style: const TextStyle(color: Colors.white)),
           ],
         ),
-      )
+      ),
     );
   }
 }
