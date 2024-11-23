@@ -23,14 +23,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Future<void> _fetchPhotos() async {
     try {
       final response = await http.get(
-        Uri.parse('https://pixabay.com/api/?key=47202390-1425d924895558884d51e7a3e&per_page=20'),
+        Uri.parse('https://picsum.photos/v2/list?limit=20'),
       );
-      print('Response status: ${response.statusCode}');
-      print('Response body: ${response.body}');
       if (response.statusCode == 200) {
-        final Map<String, dynamic> data = json.decode(response.body);
+        final List<dynamic> data = json.decode(response.body);
         setState(() {
-          _photos = (data['hits'] as List).map((photo) => photo['webformatURL'] as String).toList();
+          _photos = data.map((photo) => photo['download_url'] as String).toList();
         });
       } else {
         setState(() {

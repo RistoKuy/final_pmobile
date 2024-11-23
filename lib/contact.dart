@@ -23,16 +23,16 @@ class _ContactListScreenState extends State<ContactListScreen> {
   Future<void> _fetchContacts() async {
     try {
       final response = await http.get(
-        Uri.parse('https://pixabay.com/api/?key=47202390-1425d924895558884d51e7a3e&per_page=6'),
+        Uri.parse('https://picsum.photos/v2/list?limit=6'),
       );
       if (response.statusCode == 200) {
-        final Map<String, dynamic> data = json.decode(response.body);
+        final List<dynamic> data = json.decode(response.body);
         setState(() {
-          contacts = (data['hits'] as List).map((photo) {
+          contacts = data.map((photo) {
             return {
               'name': 'Contact ${photo['id']}',
               'email': 'contact${photo['id']}@example.com',
-              'imageUrl': photo['webformatURL'] as String,
+              'imageUrl': photo['download_url'] as String,
             };
           }).toList();
         });
