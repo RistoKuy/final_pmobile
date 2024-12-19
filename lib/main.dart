@@ -24,7 +24,58 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const RegistrationForm(),
+      home: const SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
+        context,
+        MaterialPageRoute(builder: (context) => const RegistrationForm()),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png',
+              height: 100,
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Pemrograman Mobile',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+            const CircularProgressIndicator(),
+          ],
+        ),
+      ),
     );
   }
 }
